@@ -24,7 +24,7 @@ description: |
   - 1536x854
 
 * 第2步：输入提示词。
-* 第3步: 调用`python3 scripts/img_gen.py --prompt "提示词" --size "图像尺寸" --output_dir ms_img_outputs`生成图像。
+* 第3步: 调用`python3 scripts/img_gen.py --prompt "提示词" --size "图像尺寸" --output_dir {当前工作路径}/ms_img_outputs`生成图像。
 
 # 新增配置
 
