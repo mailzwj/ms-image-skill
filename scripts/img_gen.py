@@ -21,7 +21,6 @@ args = parser.parse_args()
 base_url = 'https://api-inference.modelscope.cn/'
 
 cur_dir = os.path.dirname(os.path.abspath(__file__))
-base_path = os.getcwd()
 cfg_file = os.path.join(cur_dir, "..", "config.json")
 cfg_json = json.load(open(cfg_file, "r", encoding="utf-8"))
 
@@ -73,7 +72,7 @@ while True:
 
     if data["task_status"] == "SUCCEED":
         image = Image.open(BytesIO(requests.get(data["output_images"][0]).content))
-        output_dir = f"{base_path}/{args.output_dir}"
+        output_dir = args.output_dir
         if os.path.exists(output_dir) == False:
             os.makedirs(output_dir)
         image.save(f"{output_dir}/result_{time.strftime('%Y%m%d%H%M%S')}.png")
