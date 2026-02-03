@@ -21,7 +21,7 @@ args = parser.parse_args()
 base_url = 'https://api-inference.modelscope.cn/'
 
 cur_dir = os.path.dirname(os.path.abspath(__file__))
-base_path = cur_dir.split("/.claude/")[0]
+base_path = os.getcwd()
 cfg_file = os.path.join(cur_dir, "..", "config.json")
 cfg_json = json.load(open(cfg_file, "r", encoding="utf-8"))
 
